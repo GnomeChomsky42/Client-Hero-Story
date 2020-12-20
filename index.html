@@ -38,10 +38,10 @@
                     </ul>
                     <h3>YES! I Want To Increase Trust, Sway Purchasing Decisions &amp; Increase Referrals!</h3>
                     <p>Enter your name and email to receive your FREE Guide:</p>
-                    <form method="get" action="Guide_To_Creating_An_Irresistible_Client_Hero_Story.pdf">
+                    <form method="post" name="contact_form" action="contact-form-handler.php">
                         <input type="text" id="name" name="name" placeholder="Your Name">
                         <input type="email" id="email" name="emailaddress" placeholder="Your Email Address">
-                        <input type="button" id="downloadGuide" value="Download Your Free Guide Now">
+                        <input type="submit" id="downloadGuide" value="Download Your Free Guide Now" name="downloadGuide">
                     </form>
                 </section>
             </main>
@@ -50,5 +50,11 @@
                 <p>&copy; Cindy Cyr 2020 cincyrcopywriting.com</p>
             </footer>
         </div>
+        <script language="JavaScript">
+            var frmvalidator = new Validator("contactform")
+            frmvalidator.addValidation("name","req","Please provide your name");
+            frmvalidator.addValidation("email","req","Please provide your email");
+            frmvalidator.addValidation("email","email","Please provide a valid email address");
+        </script>
     </body>
 </html>
